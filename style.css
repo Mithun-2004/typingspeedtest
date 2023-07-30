@@ -1,0 +1,127 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color : #17a2b8;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+    min-height : 100vh;
+}
+h1{
+    color : #17a2b8;
+    background-color: #fff;
+    text-align: center;
+}
+.container{
+    background-color: #fff;
+    color : #333;
+    border-radius : 10px;
+    padding : 25px;
+    padding-top : 10px;
+    width : 770px;
+    line-height : 1.7;
+    text-align: justify;
+}
+.info{
+    margin-top : 20px;
+    display : flex;
+    align-items : center;
+    justify-content : space-between;
+    flex-wrap : wrap;
+}
+#tryAgain{
+    cursor : pointer;
+    padding : 15px 20px;
+    border-radius : 7px;
+    background-color : #17a2b8;
+    border : 0;
+    outline : 0;
+    color : #fff;
+    font-weight : bold;
+}
+.main{
+    border : 1px solid grey;
+    padding : 10px;
+}
+#paraContainer{
+    position : relative;
+}
+#paraContainer::after{
+    content : "";
+    background : grey;
+    height : 2px;
+    width : 100%;
+    position : absolute;
+    left : 0;
+    bottom : -10px;
+}
+#passage{
+    font-size : 1.17rem;
+    font-weight: 500;
+    word-break : break-all;
+}
+.infos{
+    position : relative;
+}
+.infos::after{
+    content : "";
+    height : 70%;
+    width : 1px;
+    background-color : grey;
+    position : absolute;
+    right : -15px;
+    bottom : 3px;
+}
+.active{
+    color : #17a2b8;
+    position : relative;
+}
+.active::after{
+    content : "";
+    background-color : #17a2b8;
+    height : 2px;
+    width : 100%;
+    position : absolute;
+    left : 0;
+    bottom : -3px;
+    animation : blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity : 0;
+    }
+    100%{
+        opacity : 1;
+    }
+}
+.correct{
+    color : green;
+}
+.wrong{
+    background-color : #ffc0cb;
+}
+#inputbox{
+    opacity : -100;
+    position : absolute;
+    z-index : -1;
+}
+
+@media screen and (max-width : 780px){
+    .container{
+        width : 100%;
+    }
+    .infos::after{
+        display : none;
+    }
+    #passage{
+        font-size: 1rem;;
+    }
+    .info{
+        gap : 10px;
+    }
+}
